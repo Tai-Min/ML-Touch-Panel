@@ -9,6 +9,8 @@ Two C++ applications:
 * Configurator to configure camera's frame warping to match screen's surface
 * Runtime that connects all of the parts of the project and emulates mouse using both neural networks and Intel's OpenVINO with Neural Compute Stick 2. 
 
+Networks were created and trained using Tensorflow and implemented using OpenVINO and nGraph directly.
+
 For details see [AI based touch screen](https://www.hackster.io/Tai-Min/ai-based-touch-screen-652de6).
 
 ![](https://github.com/Tai-Min/ML-Touch-Panel/blob/master/cover.JPG)
