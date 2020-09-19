@@ -1,0 +1,6 @@
+[submodule "runtime/runtime/thirdparty/json"]
+	path = runtime/runtime/thirdparty/json
+	url = https://github.com/nlohmann/json
+[submodule "runtime/runtime/thirdparty/termcolor"]
+	path = runtime/runtime/thirdparty/termcolor
+	url = https://github.com/ikalnytskyi/termcolor

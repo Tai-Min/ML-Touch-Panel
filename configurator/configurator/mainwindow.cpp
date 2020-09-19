@@ -9,9 +9,7 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    killFlag(false),
-    cameraThread(&MainWindow::cameraThreadFcn, this)
+    ui(new Ui::MainWindow)
 {
     std::unique_lock<std::mutex> lock(UiMtx);
 
@@ -30,13 +28,47 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->BLy, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBox_changed);
     connect(ui->BRx, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBox_changed);
     connect(ui->BRy, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBox_changed);
+
+    lock.unlock();
+
+    cameraExitSignal = std::promise<void>();
+    cameraExitFuture = cameraExitSignal.get_future();
+
+    std::thread cameraThread([&](){
+        cv::VideoCapture cap;
+        cap.open("http://192.168.0.122:2137/video");
+        while(cameraExitFuture.wait_for(std::chrono::microseconds(100)) == std::future_status::timeout){
+            std::unique_lock<std::mutex> lk(cameraFrameMutex);
+            cap.read(currentCameraFrame);
+        }
+        cap.release();
+    });
+    cameraThread.detach();
+
+    std::thread postprocessThread([&](){
+        while(cameraExitFuture.wait_for(std::chrono::microseconds(100)) == std::future_status::timeout){
+            std::unique_lock<std::mutex> clk(cameraFrameMutex);
+            if(currentCameraFrame.empty()){
+                QThread::msleep(40);
+                continue;
+            }
+            clk.unlock();
+
+            std::unique_lock<std::mutex> uilk(UiMtx);
+            getNewFrame();
+            drawSkewPoints();
+            displayFrames();
+            uilk.unlock();
+
+            QThread::msleep(40);
+        }
+    });
+    postprocessThread.detach();
 }
 
 MainWindow::~MainWindow()
 {
-    killFlag = true;
-    cameraThread.join();
-
+    cameraExitSignal.set_value();
     delete ui;
 }
 
@@ -87,16 +119,13 @@ void MainWindow::updateSpinBoxProperties(){
     ui->BRy->setRange(ui->TRy->value()+1, sourceImg.rows);
 }
 
-#include <iostream>
-using namespace std;
-
 void MainWindow::getNewFrame(){
     static bool fstScan = true;
 
-    QDir d;
-    std::string imgPath = d.absolutePath().toStdString() + "/board.jpg";
-    sourceImg = cv::imread(imgPath, cv::IMREAD_COLOR);
-    targetImg = cv::imread(imgPath, cv::IMREAD_COLOR);
+    std::unique_lock<std::mutex> lk(cameraFrameMutex);
+    currentCameraFrame.copyTo(sourceImg);
+    lk.unlock();
+    sourceImg.copyTo(targetImg);
 
     if(fstScan){
         updateSpinBoxProperties();
@@ -139,48 +168,7 @@ void MainWindow::displayFrames(){
     ui->targetImageDisplay->setPixmap(p);
 }
 
-void MainWindow::cameraThreadFcn(){
-    while(1){
-        std::unique_lock<std::mutex> lock(UiMtx);
-        getNewFrame();
-        drawSkewPoints();
-        displayFrames();
-        lock.unlock();
-
-        if(killFlag)
-            return;
-
-        QThread::msleep(40);
-    }
-}
-
 void MainWindow::spinBox_changed(int unused){
     std::unique_lock<std::mutex> lock(UiMtx);
     updateSpinBoxProperties();
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    QDir d;
-    QString fileName = QFileDialog::getSaveFileName(this,
-        "Save config", d.absolutePath(), "Config files (*.conf)");
-    if(fileName == ""){
-        return;
-    }
-
-    QFile f(fileName);
-    if(!f.open(QIODevice::WriteOnly)){
-        QMessageBox msgBox;
-        msgBox.setText("Couldn't open file for write.");
-        msgBox.exec();
-        return;
-    }
-
-    QTextStream stream(&f);
-    stream << ui->TLx->value() << " " << ui->TLy->value() << " ";
-    stream << ui->TRx->value() << " " << ui->TRy->value() << " ";
-    stream << ui->BLx->value() << " " << ui->BLy->value() << " ";
-    stream << ui->BRx->value() << " " << ui->BRy->value() << " ";
-
-    f.close();
 }

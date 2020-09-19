@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<mapping>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/BiasAdd" out_port_id="0"/>
+		<IR id="10" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/Conv2D/ReadVariableOp" out_port_id="0"/>
+		<IR id="23" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/Conv2D/ReadVariableOp/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/Conv2D" out_port_id="0"/>
+		<IR id="24" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_2/Relu" out_port_id="0"/>
+		<IR id="17" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_2/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/Conv2D/ReadVariableOp" out_port_id="0"/>
+		<IR id="7" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/Conv2D/ReadVariableOp/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/Conv2D" out_port_id="0"/>
+		<IR id="14" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_3/Relu" out_port_id="0"/>
+		<IR id="22" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_3/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d/Conv2D" out_port_id="0"/>
+		<IR id="2" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu/Relu" out_port_id="0"/>
+		<IR id="5" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/max_pooling2d/MaxPool" out_port_id="0"/>
+		<IR id="6" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/max_pooling2d/MaxPool" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/Conv2D/ReadVariableOp" out_port_id="0"/>
+		<IR id="18" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/Conv2D/ReadVariableOp/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/BiasAdd" out_port_id="0"/>
+		<IR id="21" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Func/StatefulPartitionedCall/input/_0" out_port_id="0"/>
+		<IR id="0" name="input" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="input" out_port_id="0"/>
+		<IR id="0" name="input" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d/Conv2D/ReadVariableOp" out_port_id="0"/>
+		<IR id="1" name="input/reverse_input_channels/Concat793_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_1/Relu" out_port_id="0"/>
+		<IR id="11" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/re_lu_1/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="Identity" out_port_id="0"/>
+		<IR id="26" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Func/StatefulPartitionedCall/output/_11" out_port_id="0"/>
+		<IR id="26" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/Identity" out_port_id="0"/>
+		<IR id="26" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/BiasAdd" out_port_id="0"/>
+		<IR id="26" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/BiasAdd" out_port_id="0"/>
+		<IR id="16" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d/BiasAdd" out_port_id="0"/>
+		<IR id="4" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/Conv2D" out_port_id="0"/>
+		<IR id="8" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_1/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/Conv2D" out_port_id="0"/>
+		<IR id="19" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_3/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/max_pooling2d_1/MaxPool" out_port_id="0"/>
+		<IR id="12" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/max_pooling2d_1/MaxPool" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/Conv2D/ReadVariableOp" out_port_id="0"/>
+		<IR id="13" name="StatefulPartitionedCall/functional_5/siamese_conv_embedding/conv2d_2/Conv2D/ReadVariableOp/Output_0/Data__const" out_port_id="1"/>
+	</map>
+</mapping>

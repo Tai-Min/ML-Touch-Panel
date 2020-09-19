@@ -56,3 +56,13 @@ compile_commands.json
 # Testing images
 miko.jpg
 board.jpg
+
+# Dataset folders
+dataset/
+dataset_new/
+tf_ckpts/
+exemplar.JPEG
+source_frame.JPEG
+
+blog/
+__pycache__/

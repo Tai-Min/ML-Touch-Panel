@@ -6,9 +6,11 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/videoio.hpp>
 
 #include <mutex>
 #include <thread>
+#include <future>
 
 namespace Ui {
 class MainWindow;
@@ -31,12 +33,14 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui; //!< UI objects from mainwindow.ui
+    Ui::MainWindow *ui; //!< UI objects from mainwindow.ui.
 
-    std::atomic<bool> killFlag; //!< On program end kill camera thread.
     std::mutex UiMtx; //!< Blocks access to ui objects.
-    std::thread cameraThread; //!< Do stuff with camera, perform skew op etc.
+    std::mutex cameraFrameMutex; //!< Block access to camera's frame
+    std::promise<void> cameraExitSignal; //!< Set value to end camera's thread.
+    std::future<void> cameraExitFuture; //!< Checked by camera thread and postprocess thread.
 
+    cv::Mat currentCameraFrame;
     cv::Mat sourceImg; //!< Original frame from camera with skew points.
     cv::Mat targetImg; //!< Frame after skew operation with skew points in the corners.
 
@@ -73,22 +77,12 @@ private:
      */
     void displayFrames();
 
-    /**
-     * @brief Do all the stuff with camera image processing in separate thread.
-     */
-    void cameraThreadFcn();
-
 private slots:
     /**
      * @brief Update spinbox properties to make sure that top left corner won't go beyong top right corner etc.
      * @param unused Unused.
      */
     void spinBox_changed(int unused = 0);
-
-    /**
-     * @brief Display prompt to get filename and if it's valid then save skew info to filename.
-     */
-    void on_pushButton_clicked();
 };
 
 #endif // MAINWINDOW_H

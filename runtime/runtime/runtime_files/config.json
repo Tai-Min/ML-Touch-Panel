@@ -1,0 +1,59 @@
+{
+    "eventDetector":{
+        "modelPath" : "detector_cnn.xml",
+        "preferredDeviceType": "CPU",
+        "samplingPeriod" : 50,
+        "windowDuration" : 350,
+        "clearedWindowPartDuration" : 150,
+        "audioInput":{
+            "deviceName" : "Mikrofon (High Definition Audio Device)",
+            "sampleRate" : 8000,
+            "channelCount" : 1,
+            "sampleSize" : 8
+        },
+        "audioProcessor" : {
+            "preEmphasisCoeff" : 0.97,
+            "frameSize" : 25,
+            "frameStride" : 10,
+            "DFTs" : 512,
+            "filterBanks" : 26,
+            "useMFCC" : false,
+            "MFCC" : {
+                "firstCoeffToKeep" : 2,
+                "lastCoeffToKeep" : 13,
+                "useSinLift" : false,
+                "sinLift" : {
+                    "cepstralLifters" : 22
+                }
+            },
+			"normalizeData" : false,
+            "rescaleData" : true,
+            "rescale" : {
+                "min" : 0,
+                "max" : 1
+            }
+        }
+    },
+    "pointerTracker":{
+        "embeddingSourceModelPath" : "embedding_source_subnet.xml",
+        "embeddingSourcePreferredDeviceType": "MYRIAD",
+        "embeddingExemplarModelPath" : "embedding_exemplar_subnet.xml",
+		"embeddingExemplarPreferredDeviceType": "MYRIAD",
+		"crossoverPreferredDeviceType": "CPU",
+		"cameraId" : 0,
+		"useIPCam" : true,
+		"IPCamURL" : "http://192.168.0.122:2137/video",
+		"screenWidth" : 1920,
+		"screenHeight" : 1080,
+		"transformation" : {
+			"xtl" : 150,
+			"ytl" : 143,
+			"xtr" : 626,
+			"ytr" : 52,
+			"xbl" : 150,
+			"ybl" : 397,
+			"xbr" : 656,
+			"ybr" : 468
+		}
+    }
+}

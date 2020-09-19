@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<mapping>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_8/MatMul/ReadVariableOp" out_port_id="0"/>
+		<IR id="60" name="StatefulPartitionedCall/event_detector/dense_8/MatMul/1_port_transpose1471_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_3/Squeeze" out_port_id="0"/>
+		<IR id="26" name="StatefulPartitionedCall/event_detector/max_pooling1d_3/Squeeze" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/Relu" out_port_id="0"/>
+		<IR id="39" name="StatefulPartitionedCall/event_detector/conv1d_4/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_7/MatMul" out_port_id="0"/>
+		<IR id="56" name="StatefulPartitionedCall/event_detector/dense_7/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_9/MatMul/ReadVariableOp" out_port_id="0"/>
+		<IR id="65" name="StatefulPartitionedCall/event_detector/dense_9/MatMul/1_port_transpose1475_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/BiasAdd" out_port_id="0"/>
+		<IR id="38" name="StatefulPartitionedCall/event_detector/conv1d_4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_4/ExpandDims" out_port_id="0"/>
+		<IR id="47" name="StatefulPartitionedCall/event_detector/max_pooling1d_4/ExpandDims/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_8/Relu" out_port_id="0"/>
+		<IR id="64" name="StatefulPartitionedCall/event_detector/dense_8/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims/dim" out_port_id="0"/>
+		<IR id="27" name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims/dim/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/Relu" out_port_id="0"/>
+		<IR id="13" name="StatefulPartitionedCall/event_detector/conv1d_3/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d" out_port_id="0"/>
+		<IR id="8" name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/batch_normalization_4/batchnorm/mul_1" out_port_id="0"/>
+		<IR id="41" name="StatefulPartitionedCall/event_detector/batch_normalization_4/batchnorm/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_7/MatMul/ReadVariableOp" out_port_id="0"/>
+		<IR id="55" name="StatefulPartitionedCall/event_detector/dense_7/MatMul/1_port_transpose1467_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_9/BiasAdd" out_port_id="0"/>
+		<IR id="68" name="StatefulPartitionedCall/event_detector/dense_9/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/flatten_2/Const" out_port_id="0"/>
+		<IR id="53" name="StatefulPartitionedCall/event_detector/flatten_2/Reshape/Cast_12100_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims" out_port_id="0"/>
+		<IR id="30" name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_4/ExpandDims/dim" out_port_id="0"/>
+		<IR id="44" name="StatefulPartitionedCall/event_detector/max_pooling1d_4/ExpandDims/dim/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/flatten_2/Reshape" out_port_id="0"/>
+		<IR id="54" name="StatefulPartitionedCall/event_detector/flatten_2/Reshape" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Func/StatefulPartitionedCall/input/_0" out_port_id="0"/>
+		<IR id="0" name="input_1" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="input_1" out_port_id="0"/>
+		<IR id="0" name="input_1" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_4/MaxPool" out_port_id="0"/>
+		<IR id="50" name="StatefulPartitionedCall/event_detector/max_pooling1d_4/MaxPool/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims/dim" out_port_id="0"/>
+		<IR id="1" name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims/dim/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_7/BiasAdd" out_port_id="0"/>
+		<IR id="58" name="StatefulPartitionedCall/event_detector/dense_7/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_4/Squeeze" out_port_id="0"/>
+		<IR id="52" name="StatefulPartitionedCall/event_detector/max_pooling1d_4/Squeeze" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_7/Relu" out_port_id="0"/>
+		<IR id="59" name="StatefulPartitionedCall/event_detector/dense_7/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_9/Relu" out_port_id="0"/>
+		<IR id="69" name="StatefulPartitionedCall/event_detector/dense_9/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_8/BiasAdd" out_port_id="0"/>
+		<IR id="63" name="StatefulPartitionedCall/event_detector/dense_8/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Identity" out_port_id="0"/>
+		<IR id="70" name="StatefulPartitionedCall/event_detector/softmax_3/Softmax" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="Func/StatefulPartitionedCall/output/_19" out_port_id="0"/>
+		<IR id="70" name="StatefulPartitionedCall/event_detector/softmax_3/Softmax" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/Identity" out_port_id="0"/>
+		<IR id="70" name="StatefulPartitionedCall/event_detector/softmax_3/Softmax" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/softmax_3/Softmax" out_port_id="0"/>
+		<IR id="70" name="StatefulPartitionedCall/event_detector/softmax_3/Softmax" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims_1" out_port_id="0"/>
+		<IR id="5" name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims_1/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_3/MaxPool" out_port_id="0"/>
+		<IR id="24" name="StatefulPartitionedCall/event_detector/max_pooling1d_3/MaxPool/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/Squeeze" out_port_id="0"/>
+		<IR id="10" name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/Squeeze" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims" out_port_id="0"/>
+		<IR id="4" name="StatefulPartitionedCall/event_detector/conv1d_3/conv1d/ExpandDims/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims_1" out_port_id="0"/>
+		<IR id="31" name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/ExpandDims_1/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/batch_normalization_3/batchnorm/add_1" out_port_id="0"/>
+		<IR id="17" name="StatefulPartitionedCall/event_detector/batch_normalization_3/batchnorm/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_9/MatMul" out_port_id="0"/>
+		<IR id="66" name="StatefulPartitionedCall/event_detector/dense_9/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/Squeeze" out_port_id="0"/>
+		<IR id="36" name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/Squeeze" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/batch_normalization_4/batchnorm/add_1" out_port_id="0"/>
+		<IR id="43" name="StatefulPartitionedCall/event_detector/batch_normalization_4/batchnorm/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_3/BiasAdd" out_port_id="0"/>
+		<IR id="12" name="StatefulPartitionedCall/event_detector/conv1d_3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_3/ExpandDims" out_port_id="0"/>
+		<IR id="21" name="StatefulPartitionedCall/event_detector/max_pooling1d_3/ExpandDims/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/dense_8/MatMul" out_port_id="0"/>
+		<IR id="61" name="StatefulPartitionedCall/event_detector/dense_8/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d" out_port_id="0"/>
+		<IR id="34" name="StatefulPartitionedCall/event_detector/conv1d_4/conv1d/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/batch_normalization_3/batchnorm/mul_1" out_port_id="0"/>
+		<IR id="15" name="StatefulPartitionedCall/event_detector/batch_normalization_3/batchnorm/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="StatefulPartitionedCall/event_detector/max_pooling1d_3/ExpandDims/dim" out_port_id="0"/>
+		<IR id="18" name="StatefulPartitionedCall/event_detector/max_pooling1d_3/ExpandDims/dim/Output_0/Data__const" out_port_id="1"/>
+	</map>
+</mapping>

@@ -37,10 +37,11 @@ FORMS += \
 INCLUDEPATH += $$PWD/../../../Programy/Programowanie/ML/openvino/openvino_2020.4.287/opencv/include
 LIBS += -L$$PWD/../../../Programy/Programowanie/ML/openvino/openvino_2020.4.287/opencv/lib \
         -L$$PWD/../../../Programy/Programowanie/ML/openvino/openvino_2020.4.287/opencv/bin \
-        -lopencv_core440d \
-        -lopencv_highgui440d \
-        -lopencv_imgcodecs440d \
-        -lopencv_imgproc440d
+        -lopencv_core440 \
+        -lopencv_highgui440 \
+        -lopencv_imgcodecs440 \
+        -lopencv_imgproc440 \
+        -lopencv_videoio440
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
