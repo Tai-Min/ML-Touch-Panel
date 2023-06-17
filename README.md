@@ -11,7 +11,7 @@ Two C++ applications:
 
 Networks were created and trained using Tensorflow and implemented using OpenVINO and nGraph directly.
 
-For details see [AI based touch screen](https://www.hackster.io/Tai-Min/ai-based-touch-screen-652de6).
+For details see [AI Based Touch Screen](https://www.hackster.io/Tai-Min/ai-based-touch-screen-652de6).
 
 ![](https://github.com/Tai-Min/ML-Touch-Panel/blob/master/cover.JPG)
 
